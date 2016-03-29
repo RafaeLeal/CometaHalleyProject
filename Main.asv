@@ -1,20 +1,25 @@
 t0 = 0;
-tf = 10;
-n = 10;
+tf = 100;
+n = 1000;
 dt = (tf - t0)/n;
 G = 6.674287*10.^(-11);
 M = 1.9891*10.^30;
-Ydot = zeros(4, n);
-Ydot2 = zeros(4, n);
-Ydot3 = zeros(4, n);
-Ydot4 = zeros(4, n);
+Y = zeros(4, n);
+GM = G*M %[m^3/(kg*s^2)]
+c1UA_to_m = 14960*10^11; %[m]
+c1Ano_to_s = 3600*24*365 %[s]
+GM = GM*c1Ano_to_s^2/c1UA_to_m^3 %[UA^3/(kg*Ano^2)]
 
-Y = Y_dot(0,0);
-Ydot(1) = Y(1);
-Ydot(2) = Y(2);
-Ydot(3) = Y(3);
-Ydot(4) = Y(4);
-Ydot
+% xp = 8.76656*10^14;
+% yp = 0;
+
+xp = 586;
+yp = 0;
+%vpy = 70.56;
+vpy = 1;
+vpx = 0;
+Y(:, 1) = [ xp; yp; vpx; vpy];
+
 for i = 1:n
-    Ydot(i+1) = Ydot(i) + dt*Phi_RungeKutta(Ydot(i),dt);
+    Y(:, i+1) = Y(:, i) + dt*Phi_RungeKutta(Y(:, i),dt);
 end
