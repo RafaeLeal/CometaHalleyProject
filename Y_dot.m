@@ -28,7 +28,7 @@ function A = Y_dot( x, y )
         A = [
             -GM*r/sqrt(r^3)+GM*rp/sqrt(rp^3) + vpx;
             -GM*r/sqrt(r^3)+GM*rp/sqrt(rp^3) + vpy;
-            -GM*x/sqrt(r^3);
+            GM*x/sqrt(r^3);
             GM*y/sqrt(r^3)
             ]
 
