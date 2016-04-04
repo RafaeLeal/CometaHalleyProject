@@ -1,6 +1,7 @@
 function ANS = Y_dot2(u1, u2, v1, v2)
         
-        GM = 0.0394348259562330; % [mUA^3]/[Ano^2]
+        %GM = 0.0394348259562330; % [mUA^3]/[Ano^2]
+        GM = 39.4348259562330; %[UA^3]/[Ano^2]
         %GM = 10; %Teste
         r = sqrt(u1^2+v1^2);
         a = [-GM*u1/r^3 , -GM*u1/r^3];
