@@ -7,7 +7,7 @@ semimajor = 17850; % [mUA]
 t0 = 0;
 tf = 100;
 %n = 20000; %test
-n = 100000;
+n = 1000000;
 
 dt = (tf - t0)/n;
 t = t0:dt:tf;
